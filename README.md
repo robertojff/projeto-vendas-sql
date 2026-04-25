@@ -63,6 +63,9 @@ Identificação dos clientes com maior volume de compras.
 
 Análise da evolução da receita ao longo do tempo.
 
+### 📅 Receita por Mês
+Análise da evolução do faturamento ao longo do tempo utilizando funções de manipulação de datas no PostgreSQL.
+
 ---
 
 ## 📈 Insights Obtidos
