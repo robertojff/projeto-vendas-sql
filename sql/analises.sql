@@ -27,3 +27,14 @@ FROM clientes c
 JOIN pedidos p ON c.cliente_id = p.cliente_id
 GROUP BY c.nome
 ORDER BY total_pedidos DESC;
+
+-- Análise de receita por mês
+-- Correção: substituição da função DATE_FORMAT (MySQL) por TO_CHAR (PostgreSQL)
+
+SELECT 
+    TO_CHAR(p.data_pedido, 'YYYY-MM') AS mes, 
+    SUM(p.quantidade * pr.preco) AS receita_total
+FROM pedidos p
+JOIN produtos pr ON p.produto_id = pr.produto_id
+GROUP BY mes
+ORDER BY receita_total DESC;
