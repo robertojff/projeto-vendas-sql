@@ -63,8 +63,19 @@ Identificação dos clientes com maior volume de compras.
 
 Análise da evolução da receita ao longo do tempo.
 
+---
+
 ### 📅 Receita por Mês
 Análise da evolução do faturamento ao longo do tempo utilizando funções de manipulação de datas no PostgreSQL.
+
+---
+
+### 🎯 Ticket Médio
+
+Cálculo do valor médio gerado por pedido, utilizando subquery para somar o total de cada pedido e, em seguida, calcular a média.
+
+**Insight:**
+O ticket médio encontrado foi de R$ 2.875, indicando o valor médio gerado por venda no período analisado.
 
 ---
 
