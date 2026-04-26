@@ -38,3 +38,31 @@ FROM pedidos p
 JOIN produtos pr ON p.produto_id = pr.produto_id
 GROUP BY mes
 ORDER BY receita_total DESC;
+
+-- 📊 Ticket Médio
+-- Calcula o valor médio de cada pedido
+-- Etapas:
+-- 1. Soma o valor total de cada pedido (quantidade * preço)
+-- 2. Calcula a média desses valores
+
+-- 1. Soma o valor total de cada pedido (quantidade * preço)
+
+SELECT 
+        p.pedido_id,
+        SUM(p.quantidade * pr.preco) AS total_venda
+    FROM pedidos p
+    JOIN produtos pr ON p.produto_id = pr.produto_id
+    GROUP BY p.pedido_id;
+
+-- 2. Calcula a média desses valores
+
+SELECT 
+    AVG(total_venda) AS ticket_medio
+FROM (
+    SELECT 
+        p.pedido_id,
+        SUM(p.quantidade * pr.preco) AS total_venda
+    FROM pedidos p
+    JOIN produtos pr ON p.produto_id = pr.produto_id
+    GROUP BY p.pedido_id
+) AS sub;
