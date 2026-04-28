@@ -89,3 +89,15 @@ FROM produtos pr
 JOIN pedidos p ON p.produto_id = pr.produto_id
 GROUP BY pr.nome_produto
 ORDER BY total_vendido DESC;
+
+-- 💰 Produto Mais Lucrativo
+-- Objetivo: identificar o produto que gerou maior receita para a empresa
+
+SELECT 
+    pr.nome_produto,
+    SUM(p.quantidade * pr.preco) AS receita_total
+FROM produtos pr
+JOIN pedidos p ON p.produto_id = pr.produto_id
+GROUP BY pr.nome_produto
+ORDER BY receita_total DESC
+LIMIT 1;
