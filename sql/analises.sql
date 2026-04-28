@@ -66,3 +66,15 @@ FROM (
     JOIN produtos pr ON p.produto_id = pr.produto_id
     GROUP BY p.pedido_id
 ) AS sub;
+
+-- 📊 Melhor Cliente por Receita
+-- Objetivo: identificar qual cliente gerou mais dinheiro para a empresa
+
+SELECT 
+    c.nome,
+    SUM(p.quantidade * pr.preco) AS receita
+FROM clientes c
+JOIN pedidos p ON c.cliente_id = p.cliente_id
+JOIN produtos pr ON p.produto_id = pr.produto_id
+GROUP BY c.nome
+ORDER BY receita DESC;
