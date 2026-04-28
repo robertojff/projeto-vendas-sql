@@ -79,6 +79,21 @@ O ticket médio encontrado foi de R$ 2.875, indicando o valor médio gerado por 
 
 ---
 
+### 👑 Melhor Cliente por Receita
+
+Consulta criada para identificar os clientes que mais geraram faturamento no período analisado.
+
+**Lógica aplicada:**
+- JOIN entre clientes, pedidos e produtos
+- SUM para calcular receita total
+- GROUP BY por cliente
+- ORDER BY decrescente para ranking
+
+**Insight:**
+Permite identificar clientes estratégicos e apoiar ações de retenção, fidelização e vendas.
+
+---
+
 ## 📈 Insights Obtidos
 
 * O produto **Celular** apresentou maior impacto na receita total, indicando alta relevância financeira para o negócio.
