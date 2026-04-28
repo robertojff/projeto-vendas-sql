@@ -112,3 +112,15 @@ FROM clientes c
 JOIN pedidos p ON c.cliente_id = p.cliente_id
 GROUP BY c.nome
 ORDER BY total_pedidos DESC;
+
+-- 🎯 Ticket Médio por Cliente
+-- Objetivo: identificar quanto cada cliente gasta, em média, por pedido
+
+SELECT 
+    c.nome,
+    SUM(p.quantidade * pr.preco) / COUNT(p.pedido_id) AS ticket_medio
+FROM clientes c
+JOIN pedidos p ON c.cliente_id = p.cliente_id
+JOIN produtos pr ON p.produto_id = pr.produto_id
+GROUP BY c.nome
+ORDER BY ticket_medio DESC;
