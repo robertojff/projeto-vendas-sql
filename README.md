@@ -73,6 +73,21 @@ Indicador importante para performance comercial e comportamento de compra.
 
 ---
 
+### 🔁 Clientes Recorrentes
+
+Consulta criada para identificar quais clientes realizaram maior quantidade de pedidos.
+
+**Lógica aplicada:**
+- JOIN entre clientes e pedidos
+- COUNT para contar pedidos realizados
+- GROUP BY por cliente
+- ORDER BY decrescente para ranking
+
+**Insight:**
+Ajuda a identificar clientes fiéis, comportamento de recompra e oportunidades de retenção.
+
+---
+
 ### 💰 Produto Mais Lucrativo
 
 Consulta criada para identificar qual produto gerou maior faturamento no período analisado.
