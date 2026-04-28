@@ -1,148 +1,125 @@
-# 📊 Análise de Vendas com SQL
+# 📊 Projeto de Análise de Vendas com SQL
 
-## 🎯 Objetivo
+Projeto prático desenvolvido com foco em evoluir habilidades em **SQL**, **PostgreSQL** e **Análise de Dados**, simulando um cenário real de vendas.
 
-Este projeto tem como objetivo analisar dados de vendas para identificar padrões de consumo, comportamento de clientes e desempenho de produtos, gerando insights que possam auxiliar na tomada de decisão de negócio.
-
----
-
-## 🛠️ Ferramentas Utilizadas
-
-* SQL
-* (Próximo passo: Power BI para visualização de dados)
+O objetivo é transformar dados brutos em informações estratégicas para apoiar decisões de negócio.
 
 ---
 
-## 📁 Estrutura do Projeto
+# 🎯 Objetivos do Projeto
 
-* `create_tables.sql` → criação das tabelas
-* `insert_data.sql` → inserção dos dados
-* `analises.sql` → consultas e análises realizadas
-
----
-
-## 🧱 Estrutura do Banco de Dados
-
-O banco foi modelado com três tabelas principais:
-
-* **clientes** → armazena informações dos clientes
-* **produtos** → contém dados dos produtos e preços
-* **pedidos** → registra as transações realizadas
-
-Essas tabelas se relacionam por meio de chaves estrangeiras, permitindo análises integradas entre clientes, produtos e vendas.
+- Praticar consultas SQL na prática
+- Trabalhar relacionamentos entre tabelas
+- Gerar insights de negócio
+- Construir portfólio para área de Dados
 
 ---
 
-## 📊 Análises Realizadas
+# 🛠️ Tecnologias Utilizadas
 
-### 💰 Receita Total
-
-Cálculo da receita total da empresa com base na quantidade vendida e no preço dos produtos.
-
----
-
-### 📦 Produto Mais Vendido
-
-Identificação dos produtos com maior volume de vendas.
+- PostgreSQL
+- SQL
+- Excel
+- Git / GitHub
 
 ---
 
-### 💸 Receita por Produto
+# 🗂️ Estrutura do Banco de Dados
 
-Análise do faturamento gerado por cada produto.
+O projeto utiliza 3 tabelas principais:
 
----
+## 👤 clientes
+- cliente_id
+- nome
 
-### 👤 Clientes com Mais Pedidos
+## 📦 produtos
+- produto_id
+- nome_produto
+- preco
 
-Identificação dos clientes com maior volume de compras.
-
----
-
-### 📅 Receita por Período
-
-Análise da evolução da receita ao longo do tempo.
-
----
-
-### 📅 Receita por Mês
-Análise da evolução do faturamento ao longo do tempo utilizando funções de manipulação de datas no PostgreSQL.
-
----
-
-### 🎯 Ticket Médio
-
-Cálculo do valor médio gerado por pedido, utilizando subquery para somar o total de cada pedido e, em seguida, calcular a média.
-
-**Insight:**
-O ticket médio encontrado foi de R$ 2.875, indicando o valor médio gerado por venda no período analisado.
+## 🧾 pedidos
+- pedido_id
+- cliente_id
+- produto_id
+- quantidade
+- data_pedido
 
 ---
 
-### 👑 Melhor Cliente por Receita
+# 📈 Análises Desenvolvidas
 
-Consulta criada para identificar os clientes que mais geraram faturamento no período analisado.
+## 💰 Receita Mensal
 
-**Lógica aplicada:**
+Consulta criada para acompanhar a evolução do faturamento ao longo dos meses.
+
+### Insight:
+Permite visualizar crescimento, queda de receita e sazonalidade.
+
+---
+
+## 🎯 Ticket Médio
+
+Cálculo do valor médio gerado por pedido.
+
+### Lógica aplicada:
+1. Soma total de cada pedido  
+2. Média dos valores encontrados
+
+### Resultado:
+**R$ 2.875,00 por pedido**
+
+### Insight:
+Indicador importante para performance comercial e comportamento de compra.
+
+---
+
+## 👑 Melhor Cliente por Receita
+
+Consulta para identificar quais clientes mais geraram faturamento.
+
+### Lógica aplicada:
 - JOIN entre clientes, pedidos e produtos
-- SUM para calcular receita total
+- SUM para receita total
 - GROUP BY por cliente
-- ORDER BY decrescente para ranking
+- ORDER BY decrescente
 
-**Insight:**
-Permite identificar clientes estratégicos e apoiar ações de retenção, fidelização e vendas.
-
----
-
-## 📈 Insights Obtidos
-
-* O produto **Celular** apresentou maior impacto na receita total, indicando alta relevância financeira para o negócio.
-
-* A categoria **Eletrônicos** concentrou a maior parte do faturamento, sendo estratégica para aumento de receita.
-
-* O cliente **Roberto** se destacou como o mais recorrente, indicando potencial para estratégias de fidelização.
-
-* Foi observado aumento na receita no mês de fevereiro em comparação a janeiro, sugerindo crescimento nas vendas no período.
-
-* Produtos com menor preço apresentaram maior volume de vendas, porém menor contribuição no faturamento total.
+### Insight:
+Ajuda a identificar clientes estratégicos para retenção e fidelização.
 
 ---
 
-## 📌 Possíveis Ações de Negócio
+# 🧠 Funções SQL Utilizadas
 
-* Priorizar produtos com maior geração de receita em campanhas de marketing
-* Desenvolver estratégias de retenção para clientes recorrentes
-* Monitorar a performance mensal para identificar tendências de crescimento
-* Avaliar o equilíbrio entre volume de vendas e margem de lucro por produto
-
----
-
-## 🧠 Principais Aprendizados
-
-Durante o desenvolvimento deste projeto, foram aplicados conceitos fundamentais de análise de dados com SQL:
-
-* Uso de `JOIN` para relacionamento entre tabelas
-* Aplicação de funções de agregação (`SUM`, `COUNT`)
-* Agrupamento de dados com `GROUP BY`
-* Ordenação de resultados com `ORDER BY`
-* Criação de métricas de negócio a partir de dados brutos
+- SELECT
+- JOIN
+- SUM()
+- AVG()
+- COUNT()
+- GROUP BY
+- ORDER BY
+- Subqueries
 
 ---
 
-## 🚀 Próximos Passos
+# 🚀 Próximos Passos
 
-* Implementar novas métricas (ticket médio, análise por região, etc.)
-* Criar dashboard interativo no Power BI
-* Trabalhar com bases de dados maiores e mais complexas
-* Evoluir para análises mais avançadas
-
----
-
-## 📌 Conclusão
-
-Este projeto demonstra a capacidade de transformar dados brutos em informações relevantes, utilizando SQL para gerar insights que podem apoiar decisões estratégicas de negócio.
+- Produto mais vendido
+- Dashboard no Power BI
+- Ranking de clientes
+- KPIs de vendas
+- Visualizações interativas
 
 ---
 
+# 📌 Sobre o Projeto
+
+Este projeto faz parte da minha transição para a área de Dados, buscando desenvolver experiência prática com ferramentas utilizadas no mercado.
+
 ---
+
+# 📬 Contato
+
+Roberto Ferreira  
+LinkedIn: https://www.linkedin.com/in/roberto-de-jesus-ferreira-884128233/
+
 
