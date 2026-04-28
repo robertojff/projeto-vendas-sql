@@ -78,3 +78,14 @@ JOIN pedidos p ON c.cliente_id = p.cliente_id
 JOIN produtos pr ON p.produto_id = pr.produto_id
 GROUP BY c.nome
 ORDER BY receita DESC;
+
+-- 📦 Produto Mais Vendido
+-- Objetivo: identificar o produto com maior volume de vendas
+
+SELECT 
+    pr.nome_produto,
+    SUM(p.quantidade) AS total_vendido
+FROM produtos pr
+JOIN pedidos p ON p.produto_id = pr.produto_id
+GROUP BY pr.nome_produto
+ORDER BY total_vendido DESC;
