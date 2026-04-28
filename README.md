@@ -57,6 +57,22 @@ Permite visualizar crescimento, queda de receita e sazonalidade.
 
 ---
 
+### 🎯 Ticket Médio por Cliente
+
+Consulta criada para identificar quanto cada cliente gasta, em média, por pedido realizado.
+
+**Lógica aplicada:**
+- JOIN entre clientes, pedidos e produtos
+- SUM para calcular receita total por cliente
+- COUNT para contar pedidos realizados
+- Divisão entre receita total e quantidade de pedidos
+- ORDER BY para ranking
+
+**Insight:**
+Ajuda a identificar clientes que realizam compras menos frequentes, porém com maior valor por pedido.
+
+---
+
 ## 🎯 Ticket Médio
 
 Cálculo do valor médio gerado por pedido.
