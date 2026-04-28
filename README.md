@@ -73,6 +73,23 @@ Indicador importante para performance comercial e comportamento de compra.
 
 ---
 
+### 💰 Produto Mais Lucrativo
+
+Consulta criada para identificar qual produto gerou maior faturamento no período analisado.
+
+**Lógica aplicada:**
+- JOIN entre produtos e pedidos
+- Multiplicação de quantidade x preço
+- SUM para receita total
+- GROUP BY por produto
+- ORDER BY decrescente
+- LIMIT 1 para trazer o produto líder
+
+**Insight:**
+Nem sempre o produto mais vendido é o mais lucrativo. Essa análise ajuda decisões comerciais e estratégicas.
+
+---
+
 ### 📦 Produto Mais Vendido
 
 Consulta criada para identificar quais produtos tiveram maior volume de vendas.
