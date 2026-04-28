@@ -101,3 +101,14 @@ JOIN pedidos p ON p.produto_id = pr.produto_id
 GROUP BY pr.nome_produto
 ORDER BY receita_total DESC
 LIMIT 1;
+
+-- 🔁 Clientes Recorrentes
+-- Objetivo: identificar quais clientes compraram mais vezes
+
+SELECT 
+    c.nome,
+    COUNT(p.pedido_id) AS total_pedidos
+FROM clientes c
+JOIN pedidos p ON c.cliente_id = p.cliente_id
+GROUP BY c.nome
+ORDER BY total_pedidos DESC;
