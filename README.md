@@ -73,6 +73,21 @@ Indicador importante para performance comercial e comportamento de compra.
 
 ---
 
+### 📦 Produto Mais Vendido
+
+Consulta criada para identificar quais produtos tiveram maior volume de vendas.
+
+**Lógica aplicada:**
+- JOIN entre produtos e pedidos
+- SUM para somar quantidades vendidas
+- GROUP BY por produto
+- ORDER BY decrescente para ranking
+
+**Insight:**
+Permite identificar produtos de maior demanda e apoiar decisões de estoque, marketing e vendas.
+
+---
+
 ## 👑 Melhor Cliente por Receita
 
 Consulta para identificar quais clientes mais geraram faturamento.
