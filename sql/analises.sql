@@ -124,3 +124,14 @@ JOIN pedidos p ON c.cliente_id = p.cliente_id
 JOIN produtos pr ON p.produto_id = pr.produto_id
 GROUP BY c.nome
 ORDER BY ticket_medio DESC;
+
+-- 🔎 Clientes com Mais de 1 Pedido
+-- Objetivo: identificar clientes recorrentes com mais de uma compra
+
+SELECT 
+    c.nome,
+    COUNT(p.pedido_id) AS total_pedidos
+FROM clientes c
+JOIN pedidos p ON c.cliente_id = p.cliente_id
+GROUP BY c.nome
+HAVING COUNT(p.pedido_id) > 1;
