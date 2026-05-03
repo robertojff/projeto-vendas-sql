@@ -104,6 +104,21 @@ Ajuda a identificar clientes fiéis, comportamento de recompra e oportunidades d
 
 ---
 
+### 🔎 Clientes com Mais de 1 Pedido
+
+Consulta criada para identificar clientes que realizaram mais de uma compra.
+
+**Lógica aplicada:**
+- JOIN entre clientes e pedidos
+- COUNT para contar pedidos por cliente
+- GROUP BY por cliente
+- HAVING para filtrar apenas clientes com mais de 1 pedido
+
+**Insight:**
+Ajuda a identificar clientes recorrentes e oportunidades de fidelização.
+
+---
+
 ### 💰 Produto Mais Lucrativo
 
 Consulta criada para identificar qual produto gerou maior faturamento no período analisado.
