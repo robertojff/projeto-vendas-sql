@@ -135,3 +135,19 @@ FROM clientes c
 JOIN pedidos p ON c.cliente_id = p.cliente_id
 GROUP BY c.nome
 HAVING COUNT(p.pedido_id) > 1;
+
+-- 🧠 Classificação de Clientes por Receita (CASE WHEN)
+-- Objetivo: segmentar clientes com base no valor total gasto
+
+SELECT 
+    c.nome, 
+    SUM(p.quantidade * pr.preco) AS valor_total,
+    CASE 
+        WHEN SUM(p.quantidade * pr.preco) > 5000 THEN 'VIP'
+        WHEN SUM(p.quantidade * pr.preco) > 2000 THEN 'Médio'
+        ELSE 'Baixo'
+    END AS categoria
+FROM clientes c
+JOIN pedidos p ON c.cliente_id = p.cliente_id
+JOIN produtos pr ON p.produto_id = pr.produto_id
+GROUP BY c.nome;
