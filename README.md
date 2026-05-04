@@ -89,6 +89,26 @@ Indicador importante para performance comercial e comportamento de compra.
 
 ---
 
+### 🧠 Classificação de Clientes (CASE WHEN)
+
+Consulta criada para segmentar clientes com base no valor total gasto.
+
+**Lógica aplicada:**
+- JOIN entre clientes, pedidos e produtos
+- SUM para calcular receita total por cliente
+- CASE WHEN para classificar clientes em categorias
+- GROUP BY por cliente
+
+**Categorias:**
+- VIP: acima de 5000
+- Médio: acima de 2000
+- Baixo: abaixo de 2000
+
+**Insight:**
+Permite identificar clientes de maior valor e criar estratégias de retenção e fidelização.
+
+---
+
 ### 🔁 Clientes Recorrentes
 
 Consulta criada para identificar quais clientes realizaram maior quantidade de pedidos.
